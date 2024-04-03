@@ -24,44 +24,48 @@
 
 <body>
     <div id="app" class="py-5">
-      <div class="container-xxl h-100 bg-dark-subtle">
-  
-        <div class="row h-100">
-          <div class="col-4 bg-white h-100 px-0">
-            <div class="user-banner">
-                <img src="img/avatar_io.jpg" alt="my avatar">
-                Sofia
-            </div>
-            <div class="notification pt-2 px-2 d-flex ">
-                        <i class="fa-solid fa-bell-slash"></i>
-                    <p class="ms-2">Ricevi notifiche di nuovi messaggi</p>
-                    
+        <div class="container-xxl h-100 bg-dark-subtle">
+
+            <div class="row h-100">
+                <div class="col-4 bg-white h-100 px-0">
+                    <div class="user-banner">
+                        <img src="img/avatar_io.jpg" alt="my avatar">
+                        Sofia
+                    </div>
+                    <div class="notification pt-2 px-2">
+                        <div class="d-flex">
+                            <i class="fa-solid fa-bell-slash"></i>
+                            <p class="ms-2">Ricevi notifiche di nuovi messaggi</p>
+                        </div>
+                        <div>
+                            <a class="ms-5 text-secondary" href="#">Attiva notifiche desktop</a>
+                        </div>
+                    </div>
+
+                    <div id="search-bar" class="bg-white">barra di ricerca</div>
+                    <div id="contacts" class="overflow-y-auto">
+                        <div class="user-contact d-flex justify-content-between align-items-center">
+                            <div class="container-fluid h-100">
+                                <div class="row h-100">
+                                    <div class="user-img col-3 h-100">img</div>
+                                    <div class="user-msg col-6 h-100">msg</div>
+                                    <div class="user-date col-3 h-100">date</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                
-            </div>
-            <div id="search-bar" class="bg-white">barra di ricerca</div>
-            <div id="contacts" class="overflow-y-auto">
-              <div class="user-contact d-flex justify-content-between align-items-center">
-                <div class="container-fluid h-100">
-                  <div class="row h-100">
-                    <div class="user-img col-3 h-100">img</div>
-                    <div class="user-msg col-6 h-100">msg</div>
-                    <div class="user-date col-3 h-100">date</div>
-                  </div>
+                <div class="col-8 bg-success-subtle h-100 px-0 border-dark-subtle border-start">
+                    <div class="user-banner">dati contatto</div>
+                    <div id="chat" class="bg-primary-subtle overflow-y-auto">
+                    </div>
+                    <div class="user-banner">invio messaggio</div>
                 </div>
-              </div>
             </div>
-          </div>
-          <div class="col-8 bg-success-subtle h-100 px-0 border-dark-subtle border-start">
-            <div class="user-banner">dati contatto</div>
-            <div id="chat" class="bg-primary-subtle overflow-y-auto">
-            </div>
-            <div class="user-banner">invio messaggio</div>
-          </div>
         </div>
-  
-      </div>
+
     </div>
-  </body>
+    </div>
+</body>
 
 </html>
