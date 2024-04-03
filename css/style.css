@@ -4,11 +4,18 @@
 	--color-icons: #b1b1b1;
 	--color-sent-bg: #d5f9ba;
 	--color-white-bg: #ffffff;
+	--color-notifiche-bg: #8edafc;
 }
 
-#app{
+.jw-debug{
+    border: 1px solid red;
+}
+#app {
     height: 100vh;
     width: 100%;
     background: linear-gradient(180deg,#009688 20%, #DADBD3 20%);
 }
+
+
+
 
