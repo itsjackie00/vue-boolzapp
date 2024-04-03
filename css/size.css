@@ -1,0 +1,67 @@
+.user-banner{
+    height: 7%;
+    background-color: var(--color-hover-bg);
+}
+
+#chat{
+    height: 86%;
+    background-image: url(../img/mine.jpg);
+}
+
+#search-bar{
+    height: 4%;
+    background-color: white;
+}
+
+#contacts {
+    height: 82%;
+}
+
+.user-contact {
+    height: 10%;
+}
+
+.notification {
+    height: 9%;
+    background-color: var(--color-notifiche-bg);
+}
+.fa-bell-slash {
+    font-size: 20px;
+    color: var(--color-notifiche-bg);
+    background-color: white;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.user-banner img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 5px;
+}
+
+.user-img img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.fa-microphone{
+    font-size: 25px;
+    color: grey;
+}
+
+.fa-face-smile{
+    font-size: 25px;
+    color: grey;
+}
+
+.msg-bar{
+    width: 700px;
+}
