@@ -6,6 +6,11 @@ createApp({
     data () {
         return {
             contacts: contacts,
+            activeIndex: 0,
+            backgroundColor: '',
+            hoverIndex: -1,
+            activeIndex: -1,
+            
         }
     },
     methods: {
@@ -13,6 +18,15 @@ createApp({
             const contact = this.contacts.find((el) => {
                 return el.id === id;
             });
+            console.log('ciao');
+        },
+        handleMouseOver(index) {
+            this.hoverIndex = index;
+            this.backgroundColor = 'grey';
+        },
+        handleClick(index) {
+            this.activeIndex = index;
+          this.backgroundColor = 'lightcoral'; 
         }
     },
     computed: {

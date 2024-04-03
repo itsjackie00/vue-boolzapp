@@ -16,6 +16,9 @@
     background: linear-gradient(180deg,#009688 20%, #DADBD3 20%);
 }
 
-
+/* UTILITY */
+.active-hover {
+	background-color: var(--color-hover-bg);
+}
 
 

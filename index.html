@@ -63,8 +63,8 @@
                     <div id="contacts" class="overflow-y-auto">
                         <div class="user-contact d-flex justify-content-between align-items-center border-bottom ">
                             <div class="container-fluid h-100">
-                                <div class="row h-100 mt-2 " v-for="(item,index) in contacts" :key="item.id">
-                                    <div class="user-img col-2 h-100" >
+                                <div class="row h-100 mt-2 " @mouseover="handleMouseOver(index)" @click="handleClick(index)" :style="{ backgroundColor: backgroundColor }"  v-for="(item,index) in contacts" :key="item.id" >
+                                    <div class="user-img col-2 h-100">
                                         <img  :src="item.avatar" :alt="item.name" >
                                     </div>
                                     <div class="user-msg col-6 h-100" >
@@ -72,7 +72,7 @@
                                         <div class="small text-secondary">Ultimo messaggio inviato</div>
                                     </div>
                                     <div class="user-date col-4 h-100 text-end small text-secondary ">
-                                        12:00
+                                        {{item.messages[item.messages.length - 1].date}}
                                     </div>
                                 </div>
                             </div>
@@ -80,12 +80,12 @@
                     </div>
                 </div>
                 <div class="col-8 bg-success-subtle h-100 px-0 border-dark-subtle border-start">
-                    <div class="user-banner d-flex justify-content-between ">
-                        <div class="d-flex">
-                            <img src="img/avatar_1.jpg" alt="my avatar">
+                    <div class="user-banner d-flex justify-content-between " >
+                        <div class="d-flex" v-for="(item,index) in contacts" :key="contacts.id">
+                            <img :src="item.avatar" :alt="item.name" >
                             <div class="mt-2">
-                                <h6>{{}}</h6>
-                                <p class="text-secondary small ">Ultimo accesso oggi alle 12:00</p>
+                                <h6>{{contacts.name}}</h6>
+                                <p class="text-secondary small ">{{contacts.date}}</p>
                                 <div class="d-flex ">
                                 </div>
                             </div>
