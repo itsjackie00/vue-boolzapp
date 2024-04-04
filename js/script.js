@@ -32,15 +32,15 @@ createApp({
                 }
                 this.activeContact.messages.push(newMessage)
             }, 1000);
-            this.activeConctact.messages.push(newMessage);
+            this.activeContact.messages.push(newMessage);
         },
         sendMessage() {
             const newMessage = this.createMessage(this.messageText,'sent');
-            this.activeConctact.messages.push(this.createMessage(this.messageText, 'sent'));
+            this.activeContact.messages.push(this.createMessage(this.messageText, 'sent'));
             this.messageText = '';
             setTimeout(() => {
                 const newMessage = this.createMessage('ok', 'received');
-                this.activeConctact.messages.push(this.createMessage('ok', 'received'));
+                this.activeContact.messages.push(this.createMessage('ok', 'received'));
             })
         }
         },
