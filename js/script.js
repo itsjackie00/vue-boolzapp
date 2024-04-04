@@ -6,32 +6,23 @@ createApp({
     data () {
         return {
             contacts: contacts,
-            activeIndex: 0,
-            backgroundColor: '',
-            hoverIndex: -1,
-            activeIndex: -1,
+            activeContactId: 1,
+            messageText:'',
             
         }
     },
     methods: {
-        toggleDone(id) {
-            const contact = this.contacts.find((el) => {
-                return el.id === id;
-            });
-            console.log('ciao');
+        setActiveContact(id) {
+            this.activeContactId = id
         },
-        handleMouseOver(index) {
-            this.hoverIndex = index;
-            this.backgroundColor = 'grey';
-        },
-        handleClick(index) {
-            this.activeIndex = index;
-          this.backgroundColor = 'lightcoral'; 
-        }
-    },
-    computed: {
         
     },
+    computed: {
+        activeContact() {
+            return this.contacts.find((el) => el.id ===
+                this.activeContactId);
+            }
+        },
     mounted() {
         console.log(this.contacts);
     }

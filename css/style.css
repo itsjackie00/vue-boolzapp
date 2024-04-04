@@ -17,8 +17,23 @@
 }
 
 /* UTILITY */
-.active-hover {
+.active {
+	background-color: var(--color-hover-bg);
+}
+.active :hover{
 	background-color: var(--color-hover-bg);
 }
 
+.sent{
+	background-color: var(--color-sent-bg);
+	margin-left: auto;
+}
 
+.received{
+	background-color: var(--color-white-bg);
+	margin-right: auto;
+}
+
+.msg{
+	padding: 20px;
+}
