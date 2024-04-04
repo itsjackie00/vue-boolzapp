@@ -32,17 +32,7 @@ createApp({
                 }
                 this.activeContact.messages.push(newMessage)
             }, 1000);
-            this.activeContact.messages.push(newMessage);
         },
-        sendMessage() {
-            const newMessage = this.createMessage(this.messageText,'sent');
-            this.activeContact.messages.push(this.createMessage(this.messageText, 'sent'));
-            this.messageText = '';
-            setTimeout(() => {
-                const newMessage = this.createMessage('ok', 'received');
-                this.activeContact.messages.push(this.createMessage('ok', 'received'));
-            })
-        }
         },
         computed: {
             activeContact() {
