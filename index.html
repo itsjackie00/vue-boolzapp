@@ -15,6 +15,8 @@
     <!-- CSS/style.css -->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/size.css">
+    <!-- Luxon -->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
     <!-- VUE src -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!-- js/script.js -->
@@ -63,11 +65,14 @@
                     <div id="contacts" class="overflow-y-auto ">
                         <div class="user-contact d-flex justify-content-between align-items-center">
                             <div class="container-fluid h-100">
-                                <div class="row h-100 mt-2 border-bottom " :class="{'active': activeContactId === contact.id}" v-for="(contact,index) in contacts" :key="contact.id" @click="setActiveContact(contact.id)" >
+                                <div class="row h-100 mt-2 border-bottom "
+                                    :class="{'active': activeContactId === contact.id}"
+                                    v-for="(contact,index) in contacts" :key="contact.id"
+                                    @click="setActiveContact(contact.id)">
                                     <div class="user-img col-2 h-100">
-                                        <img  :src="contact.avatar" :alt="activeContact.name" >
+                                        <img :src="contact.avatar" :alt="activeContact.name">
                                     </div>
-                                    <div class="user-msg col-6 h-100" >
+                                    <div class="user-msg col-6 h-100">
                                         <h6>{{contact.name}}</h6>
                                         <div class="small text-secondary">Ultimo messaggio inviato</div>
                                     </div>
@@ -80,9 +85,9 @@
                     </div>
                 </div>
                 <div class="col-8 bg-success-subtle h-100 px-0 border-dark-subtle border-start">
-                    <div class="user-banner d-flex justify-content-between " >
+                    <div class="user-banner d-flex justify-content-between ">
                         <div class="d-flex">
-                            <img :src="activeContact.avatar" :alt="activeContact.name" >
+                            <img :src="activeContact.avatar" :alt="activeContact.name">
                             <div class="mt-2">
                                 <h6>{{activeContact.name}}</h6>
                                 <p class="text-secondary small ">Ultimo acesso</p>
@@ -96,11 +101,13 @@
                             <i class="fa-solid fa-ellipsis-vertical px-1"></i>
                         </div>
                     </div>
-                    <div id="chat" class="bg-primary-subtle overflow-y-auto" >
-                        <div class="d-flex p-3" v-for="(msg,index) in activeContact.messages">
-                            <div class="msg" :class="msg.status">
-                                {{msg.message}}</div>
-                            <!-- <span>{{msg.date}}</span> -->
+                    <div id="chat" class="bg-primary-subtle overflow-y-auto">
+                        <div class="d-flex p-3 " v-for="(msg,index) in activeContact.messages">
+                            <div class="msg message-bubble message-text" :class="msg.status">
+                                {{msg.message}}
+                                <div class="small text-secondary d-flex  justify-content-end  ">
+                                    {{msg.date}}</div>
+                            </div>
                         </div>
                     </div>
                     <div class="user-banner  p-3 ">
@@ -110,7 +117,8 @@
                             </div>
                             <div>
                                 <div class="msg-bar">
-                                    <input type="text" class="form-control" placeholder="Scrivi un messaggio" v-model="messageText" @keyup.enter="sendMessage">
+                                    <input type="text" class="form-control" placeholder="Scrivi un messaggio"
+                                        v-model="messageText" @keyup.enter="sendMessage()">
                                 </div>
                             </div>
                             <div>
