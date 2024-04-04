@@ -10,6 +10,7 @@ createApp({
             contacts: contacts,
             activeContactId: 1,
             messageText: '',
+            letters: '',
         }
     },
     methods: {
@@ -32,15 +33,35 @@ createApp({
                 }
                 this.activeContact.messages.push(newMessage)
             }, 1000);
+        },        
+        filterConctacts() {
+            let array = this.contacts.filter((el) => el.name.toLowerCase().includes(this.letters));
+            console.log(array); 
+            return(array);//this.contacts.find((el) => el.name.includes(this.letters));
+
         },
-        },
-        computed: {
-            activeContact() {
-                return this.contacts.find((el) => el.id ===
-                    this.activeContactId);
-            }
-        },
-        mounted() {
-            console.log(this.contacts);
+        //create a function for on click toggle down menu and show menu
+        toggleDropdown(index) {
+            
         }
+    },
+    computed: {
+        activeContact() {
+            return this.contacts.find((el) => el.id ===
+                this.activeContactId);
+        },
+
+
+
+        formattedTime() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            return `${hours}:${minutes}`;
+        },
+    },
+    mounted() {
+        console.log(this.contacts);
+        console.log(this.letters);
+    }
 }).mount('#app') 
