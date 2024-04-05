@@ -16,6 +16,7 @@ createApp({
     methods: {
         setActiveContact(id) {
             this.activeContactId = id
+            this.activeMsgIndex = null ;
         },
         createMessage() {
             const newMessage = {
@@ -42,7 +43,34 @@ createApp({
         },
         //create a function for on click toggle down menu and show menu
         toggleDropdown(index) {
-            
+            this.activeMsgIndex = this.activeMsgIndex === index ? null : index
+        },
+        getContactsIndex(id) {
+          const index = this.contacts.findIndex((el) => el.id === id);
+          const msgLastIndex = this.contacts[index].messages.length - 1;
+          if(msgLastIndex >= 0){
+            return this.contacts[index].messages[msgLastIndex];
+          }else{
+            return 'Non ci sono messaggi';
+          }
+          return this.contacts[index].messages[msgLastIndex];  
+        },
+        getLastMessage(id) {
+            const index= this.contacts.findIndex((el) => el.id === id);
+            const msgLastIndex  = this.contacts[index].messages.length - 1;
+            return this.contacts[index].messages[msgLastIndex].message;
+        },
+        getLastMsgDate(id) {
+            const index = this.contacts.findIndex((el) => el.id === id);
+            const msgLastIndex = this.contacts[index].messages.length - 1;
+            return this.contacts[index].messages[msgLastIndex].date;
+        },
+        deletMsg(i){
+            this.activeContact.messages.splice(i,1);
+            this.activeMsgIndex = null ;
+        },
+        activeMsgIndex(){
+            return this.activeMsgIndex
         }
     },
     computed: {
@@ -50,15 +78,11 @@ createApp({
             return this.contacts.find((el) => el.id ===
                 this.activeContactId);
         },
-
-
-
-        formattedTime() {
-            const now = new Date();
-            const hours = now.getHours().toString().padStart(2, '0');
-            const minutes = now.getMinutes().toString().padStart(2, '0');
-            return `${hours}:${minutes}`;
+        lastAcccess(){
+            const index = this.activeContact.messages.length - 1;
+            return this.activeContact.messages[index].date
         },
+        
     },
     mounted() {
         console.log(this.contacts);

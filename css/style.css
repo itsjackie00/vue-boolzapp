@@ -43,17 +43,3 @@
 	padding: 15px;
 }
 
-.sent .dropdown-toggle{
-	position: absolute;
-	right: 10;
-	top: 0;
-	cursor: pointer;
-	color: grey;
-}
-.received .dropdown-toggle{
-	position: absolute;
-	right: 5px;
-	top: -5px;
-	cursor: pointer;
-	color: grey;
-}
