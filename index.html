@@ -13,6 +13,7 @@
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- CSS/style.css -->
+    <link rel="stylesheet" href="js/style.css">
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/size.css">
     <!-- Luxon -->
@@ -20,6 +21,7 @@
     <!-- VUE src -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!-- js/script.js -->
+    <script src="js/emoji-picker.js" type="module"></script>
     <script src="js/script.js" type="module"></script>
     <title>Buzzap</title>
 </head>
@@ -134,6 +136,7 @@
                         <div class="d-flex justify-content-between align-items-center ">
                             <div>
                                 <i class="fa-regular fa-face-smile"></i>
+                                <Picker @select="onSelectEmoji" :class="{'d-none': !showEmoji}" />
                             </div>
                             <div>
                                 <div class="msg-bar">
