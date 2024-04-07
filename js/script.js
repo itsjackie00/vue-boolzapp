@@ -1,5 +1,5 @@
 import { contacts } from './data.js';
-import Picker from './emoji-picker.js';
+// import Picker from './emoji-picker.js';
 
 const dt = luxon.DateTime;
 
@@ -13,7 +13,10 @@ createApp({
             messageText: '',
             letters: '',
             activeMsgIndex: null,
-            // showEmoji: false,
+            showEmoji: false,
+            isOnline: true,
+            isTyping: false,
+            accessStatus: 'ultimo',
         }
     },
     methods: {
@@ -21,11 +24,14 @@ createApp({
             this.activeContactId = id
         },
         createMessage() {
+            this.accessStatus = 'typing';
+
             const newMessage = {
                 date: dt.now().setLocale('it').toFormat('dd/MM/yyyy HH:mm'),
                 message: this.messageText,
-                status: 'sent'
+                status: 'sent',
             }
+            //console.log(this.newMessage);
             this.activeContact.messages.push(newMessage);
             this.messageText = '';
             setTimeout(() => {
@@ -35,8 +41,10 @@ createApp({
                     status: 'received'
                 }
                 this.activeContact.messages.push(newMessage)
-            }, 1000);
+                this.accessStatus = 'online';
+            }, 2000);
         },
+        
         filterConctacts() {
             let array = this.contacts.filter((el) => el.name.toLowerCase().includes(this.letters));
             //console.log(array);
@@ -70,7 +78,7 @@ createApp({
         deletMsg(i) {
             this.activeContact.messages.splice(i, 1);
         },
-        
+
         // onSelectEmoji(emoji) {
         //     console.log(emoji)
         //     this.messageText += emoji.i;
@@ -85,9 +93,17 @@ createApp({
         //       }
         //       */
         // },
+        handleInput() {
+            this.isTyping = true;
+            clearTimeout(this.typingTimeout); // Clear any previous timer
+            this.typingTimeout = setTimeout(() => {
+                this.isTyping = false;
+            }, 3000); // Reset typing status after 3 seconds of inactivity
+        },
     },
     computed: {
         activeContact() {
+            this.accessStatus = 'ultimo';
             return this.contacts.find((el) => el.id ===
                 this.activeContactId);
         },
