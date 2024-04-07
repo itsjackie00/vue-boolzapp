@@ -1,7 +1,7 @@
 import { contacts } from './data.js';
 // import Picker from './emoji-picker.js';
 
-const token = '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';
+const chatGpt = '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';
 
 const dt = luxon.DateTime;
 
