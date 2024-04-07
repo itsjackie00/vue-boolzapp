@@ -1,6 +1,8 @@
 import { contacts } from './data.js';
 // import Picker from './emoji-picker.js';
 
+const token = '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';
+
 const dt = luxon.DateTime;
 
 const { createApp } = Vue;
@@ -100,6 +102,7 @@ createApp({
                 this.isTyping = false;
             }, 3000); // Reset typing status after 3 seconds of inactivity
         },
+
     },
     computed: {
         activeContact() {
