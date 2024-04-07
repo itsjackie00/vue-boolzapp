@@ -52,7 +52,8 @@
     background-color: white;
 }
 
-.fa-microphone{
+.fa-microphone,
+.fa-paper-plane{
     font-size: 25px;
     color: grey;
 }

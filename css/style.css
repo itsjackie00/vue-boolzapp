@@ -40,6 +40,15 @@
 }
 
 .msg {
-	padding: 15px;
+	padding: 20px;
+	border-radius: 5px;
+}
+
+.fa-chevron-down{
+	cursor: pointer;
+	font-size: 10px;
+	position: absolute;
+	top: 7px;
+	right: 10px;
 }
 
