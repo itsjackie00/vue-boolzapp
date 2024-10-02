@@ -15,6 +15,10 @@
 
 #contacts {
     height: 82%;
+ 
+    overflow-x: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
 .user-contact {

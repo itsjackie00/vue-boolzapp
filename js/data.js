@@ -2,7 +2,7 @@ export const contacts = [
     {
         id:1,
         name: 'Michele',
-        avatar: 'img/avatar_1.jpg',
+        avatar: 'img/avatar_4.jpg',
         visible: true,
         messages: [
             {
@@ -185,6 +185,38 @@ export const contacts = [
                 date: '10/01/2020 15:51:00',
                 hour: '15:30',
                 message: 'OK!!',
+                status: 'received'
+            },
+            {
+                date: '10/01/2020 15:51:00',
+                hour: '15:30',
+                message: 'Hai prenotato la pizza?',
+                status: 'sent'
+            }
+        ],
+    },
+    {
+        id:9,
+        name: 'Samuele',
+        avatar: '  img/avatar_3.jpg',
+        visible: true,
+        messages: [
+            {
+                date: '28/03/2020 10:10:40',
+                hour: '15:30',
+                message: 'La Marianna va in campagna',
+                status: 'received'
+            },
+            {
+                date: '28/03/2020 10:20:10',
+                hour: '15:30',
+                message: 'Sicuro di non aver sbagliato chat?',
+                status: 'sent'
+            },
+            {
+                date: '28/03/2020 16:15:22',
+                hour: '15:30',
+                message: 'Ah scusa!',
                 status: 'received'
             }
         ],
